@@ -14,7 +14,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func NextButtonClick(_ sender: Any) {
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "innerView")
+        vcName?.modalTransitionStyle = .coverVertical
+        vcName?.modalPresentationStyle = .fullScreen
+        self.present(vcName!, animated: true, completion: nil)
+    }
+    
 
 }
 
